@@ -1,7 +1,7 @@
 ---
 name: vpick-image-generator
-description: "Generate AI images using multiple models on VPick's canvas. Use when the user says 'generate image', 'create an image', 'AI image', 'make a picture', 'Midjourney image', 'generate artwork', 'create character design', 'image generation', or wants to generate images with models like Midjourney, Grok, nano-banana, or Seedream."
-version: 1.0.0
+description: "Multi-model AI image generation on a visual canvas. Supports Midjourney (relaxed/fast/turbo, v7.0, 4-image grid), Grok Imagine (6 images per call, auto I2I), nano-banana-2 (multi-reference), Seedream 5.0 (up to 3K HD). Features: text-to-image, image-to-image, style transfer, multi-reference composition, batch generation, aspect ratio control. Use when the user says 'generate image', 'create an image', 'AI image', 'Midjourney', 'generate artwork', 'character design', 'create illustration', or wants AI image generation."
+version: 1.0.1
 metadata:
   openclaw:
     emoji: "🎨"
@@ -13,7 +13,7 @@ metadata:
 
 # VPick Image Generator
 
-Generate AI images using multiple models — Midjourney, Grok, nano-banana, Seedream — on a visual canvas with reference image support. Powered by [VPick](https://vpick.10xboost.org).
+Multi-model AI image generation on a visual canvas — Midjourney, Grok, nano-banana, Seedream — with reference image support, style transfer, and batch generation. Powered by [VPick](https://vpick.10xboost.org).
 
 ## Prerequisites
 
