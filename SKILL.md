@@ -12,11 +12,19 @@ metadata:
 
 Multi-model AI image generation on a visual canvas — Midjourney, Grok, nano-banana, Seedream — with reference image support, style transfer, and batch generation. Powered by [VPick](https://vpick.10xboost.org).
 
+## Security & Data Handling
+
+- **Authentication**: Your MCP link contains an embedded token — no separate API keys or credentials are needed or sent. Treat your MCP link like a password.
+- **Data flow**: All generation requests go through VPick's server (`vpick.10xboost.org` on Google Cloud). VPick routes requests to third-party AI model providers (Midjourney, Grok, Seedream, etc.) on your behalf. Your prompts and uploaded reference images are sent to these providers for processing.
+- **Storage**: Generated images are stored in Google Cloud Storage under your VPick account.
+- **No local credentials**: This skill does not require any local API keys, environment variables, or secrets.
+- **Billing**: Generation costs are charged to your VPick credit balance, not directly to any third-party service.
+
 ## Prerequisites
 
 1. **Sign up** at [vpick.10xboost.org](https://vpick.10xboost.org) (Google OAuth — new users get $1 free credit)
-2. **Get your MCP link**: Go to **Settings** → copy your MCP Server URL
-3. **Add to Claude**: Paste the MCP link into Claude settings as a Connector — no install needed
+2. **Get your MCP link**: Go to **Settings** → copy your MCP Server URL (contains your auth token)
+3. **Add to Claude**: Paste the MCP link into Claude settings as a Connector — no install, no API keys needed
 
 ## Available Image Models
 
