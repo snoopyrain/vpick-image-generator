@@ -5,10 +5,7 @@ version: 1.0.1
 metadata:
   openclaw:
     emoji: "🎨"
-    requires:
-      env:
-        - VPICK_MCP_TOKEN
-    primaryEnv: VPICK_MCP_TOKEN
+    homepage: https://vpick-doc.10xboost.org/guide/mcp-connection.html
 ---
 
 # VPick Image Generator
@@ -18,8 +15,8 @@ Multi-model AI image generation on a visual canvas — Midjourney, Grok, nano-ba
 ## Prerequisites
 
 1. **Sign up** at [vpick.10xboost.org](https://vpick.10xboost.org) (Google OAuth — new users get $1 free credit)
-2. **Get MCP token** from VPick settings for remote MCP access
-3. **Set** `VPICK_MCP_TOKEN` environment variable
+2. **Get your MCP link**: Go to **Settings** → copy your MCP Server URL
+3. **Add to Claude**: Paste the MCP link into Claude settings as a Connector — no install needed
 
 ## Available Image Models
 
