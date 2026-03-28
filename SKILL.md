@@ -1,5 +1,5 @@
 ---
-name: vpick-image-generator
+name: vpick-ai-image-generator
 description: "Multi-model AI image generation on a visual canvas. Supports Midjourney (relaxed/fast/turbo, v7.0, 4-image grid), Grok Imagine (6 images per call, auto I2I), nano-banana-2 (multi-reference), Seedream 5.0 (up to 3K HD). Features: text-to-image, image-to-image, style transfer, multi-reference composition, batch generation, aspect ratio control. Use when the user says 'generate image', 'create an image', 'AI image', 'Midjourney', 'generate artwork', 'character design', 'create illustration', or wants AI image generation."
 version: 1.0.1
 metadata:
@@ -14,11 +14,14 @@ Multi-model AI image generation on a visual canvas — Midjourney, Grok, nano-ba
 
 ## Security & Data Handling
 
-- **Authentication**: Your MCP link contains an embedded token — no separate API keys or credentials are needed or sent. Treat your MCP link like a password.
-- **Data flow**: All generation requests go through VPick's server (`vpick.10xboost.org` on Google Cloud). VPick routes requests to third-party AI model providers (Midjourney, Grok, Seedream, etc.) on your behalf. Your prompts and uploaded reference images are sent to these providers for processing.
-- **Storage**: Generated images are stored in Google Cloud Storage under your VPick account.
-- **No local credentials**: This skill does not require any local API keys, environment variables, or secrets.
+- **MCP link is a credential**: Your MCP config contains an embedded authentication token in the URL (`https://vpick.10xboost.org/mcp/t/xxxxx...`). Treat it like a password — do not share it publicly.
+- **Token scope**: The embedded token grants **generation access** to your VPick account. It can create/manage canvas nodes, trigger image generations, upload reference images, and export results. It cannot access your social media accounts or any services outside VPick.
+- **Token storage**: The token is stored server-side in VPick's database (Google Cloud, us-central1). It is never written to your local filesystem. You can regenerate it anytime at [vpick.10xboost.org/settings](https://vpick.10xboost.org/settings).
+- **Data flow**: All generation requests go through VPick's server (`vpick.10xboost.org` on Google Cloud). VPick routes requests to third-party AI model providers (Midjourney, Grok, Seedream, nano-banana) on your behalf. Your prompts and uploaded reference images are sent to these providers for processing.
+- **Storage**: Generated images are stored in Google Cloud Storage under your VPick account. Uploaded reference images are used only for generation and stored in your project.
+- **No local credentials**: No local API keys, environment variables, or secrets are needed. All auth is embedded in the MCP link.
 - **Billing**: Generation costs are charged to your VPick credit balance, not directly to any third-party service.
+- **Third-party service**: This skill relies on [VPick](https://vpick.10xboost.org), a cloud AI generation platform. Documentation: [vpick-doc.10xboost.org](https://vpick-doc.10xboost.org). Source code: [github.com/snoopyrain](https://github.com/snoopyrain).
 
 ## Prerequisites
 
